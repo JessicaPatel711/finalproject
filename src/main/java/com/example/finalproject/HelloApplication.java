@@ -52,7 +52,7 @@ public class HelloApplication implements Runnable {
     private String[] spaces = new String[9];
 
     //Winner Positions
-    private int[][] wins = new int[][] { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 }, { 0, 3, 6 }, { 1, 4, 7 }, { 2, 5, 8 }, { 0, 4, 8 }, { 2, 4, 6 } };
+    private int[][] wins = new int[][]{{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
 
 
     private JFrame frame;
@@ -78,9 +78,7 @@ public class HelloApplication implements Runnable {
     private Font smallerFont = new Font("Verdana", Font.BOLD, 20);
     private Font largerFont = new Font("Verdana", Font.BOLD, 50);
 
-
-
-
+    // CONSTRUCTOR
     public HelloApplication() {
         System.out.println("Please input the IP: ");
         ip = in.nextLine();
@@ -209,7 +207,7 @@ public class HelloApplication implements Runnable {
                 userTurn = true;
             } catch (IOException e) {
                 e.printStackTrace();
-                errors+= 1;
+                errors += 1;
             }
         }
     }
@@ -315,10 +313,7 @@ public class HelloApplication implements Runnable {
     @SuppressWarnings("unused")
 
 
-
-
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         HelloApplication ticTacToe = new HelloApplication();
     }
 
@@ -357,7 +352,7 @@ public class HelloApplication implements Runnable {
                             outputStream.writeInt(position);
                             outputStream.flush();
                         } catch (IOException e1) {
-                            errors+= 1;
+                            errors += 1;
                             e1.printStackTrace();
                         }
                         checkForWin();
