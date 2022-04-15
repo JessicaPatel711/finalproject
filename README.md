@@ -13,7 +13,7 @@
     <li><a href="#getting-started"> ➤ Getting Started</a></li>
     <li><a href="#scenario1"> ➤ Scenario 1: Main Player Wins </a></li>
     <li><a href="#scenario2"> ➤ Scenario 2: Opponent Wins </a></li>
-    <li><a href="#scenario3"> ➤ Scenario 3: BothPlayers Form a Tie </a></li>
+    <li><a href="#scenario3"> ➤ Scenario 3: Both Players Form a Tie </a></li>
     <li><a href="#acknowledgements"> ➤ Acknowledgements </a></li>
     <li><a href="#references"> ➤ References</a></li>
     <li><a href="#credits"> ➤ Credits</a></li>
