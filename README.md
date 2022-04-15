@@ -56,7 +56,7 @@
 <!-- SCENARIO1 -->
 <h2 id="scenario1"> Scenario 1: Main Player Wins </h2>
 
-<p> When the main player (player who gets first turn) wins, the three Xs will be covered by a straight black line with a "Winner" message display on the main player's window, while the opponent's window will have the "You lose" message displayed.</p>
+<p> When the main player (player who gets first turn) wins, the three Xs will be recorded with a "Winner" message display on the main player's window, accouncing the winner on both clients' server.</p>
 
 <p align="center"> 
 <img src="README_files/PlayerX_Won.jpg" alt="Player X Won" height="300px" width="300px">
@@ -66,10 +66,9 @@
 <!-- SCENARIO2 -->
 <h2 id="scenario2"> Scenario 2: Opponent Wins </h2>
 
-<p> When the opponent (player who gets second turn) wins, the three Os will be covered by a straight black line with a "Winner" message display on the opponent's window, while the main player's window will have the "You lose" message displayed.</p>
+<p> When the opponent (player who gets second turn) wins, the three Os will be shown with a "Winner" message display on the opponent's window, accouncing the winner on both clients' server.</p>
 
 <p align="center"> 
-<p>ENTER IMAGE EXAMPLE BELOW.</p>
 <img src="README_files/PlayerO_Won.jpg" alt="Player O Won" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
@@ -80,7 +79,6 @@
 <p> If there comes a chance that no one has formed a straight line by the end of the game, the game will end with the "It is a tie" massage displaying on both player's window.</p>
 
 <p align="center"> 
-<p>ENTER IMAGE EXAMPLE BELOW.</p>
 <img src="README_files/Tie.jpg" alt="Tie" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
