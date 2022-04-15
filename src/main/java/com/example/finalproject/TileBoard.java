@@ -1,4 +1,13 @@
-package com.example.finalproject;
+/**
+ * @author Japnit Ahuja
+ * @author Aanisha Newaz
+ * @author Chioma Okechukwu
+ * @author Jessica Patel
+ *
+ * @version 1.0
+ */
+
+package csci2020u.finalproject.tictactoe;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -7,9 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
-import java.io.IOException;
 import java.util.Arrays;
-
 
 public class TileBoard {
     // use StackPane for the tile board
@@ -21,6 +28,11 @@ public class TileBoard {
     // the player this tile board belongs to
     private Player thisPlayer;
 
+    /**
+     * Class constructor for TileBoard class to add tiles onto game board
+     *
+     * @param player            Current player for new Client Window
+     */
     public TileBoard(Player player) {
         thisPlayer = player;
 
@@ -28,12 +40,14 @@ public class TileBoard {
         // set height and width using UI constants, and place in the middle
         pane.setMinSize(UIConstants.APP_WIDTH, UIConstants.TILE_BOARD_HEIGHT);
         pane.setTranslateX((float) UIConstants.APP_WIDTH / 2);
-        pane.setTranslateY((float) UIConstants.APP_HEIGHT / 2 + UIConstants.INFO_CENTER_HEIGHT); // TODO: reposition this if using info center
+        pane.setTranslateY((float) UIConstants.APP_HEIGHT / 2 + UIConstants.INFO_CENTER_HEIGHT);
 
         addAllTiles(); // initialize an empty tile board
     }
 
-    // add empty tiles to the tile board
+    /**
+     * Method to add empty tiles to the tile board
+     */
     private void addAllTiles() {
         int pos = 0; // update the position of each tile
         for (int row = 0; row < 3; row++) {
@@ -54,20 +68,27 @@ public class TileBoard {
         }
     }
 
-    // getters
+    /**
+     * Getter method to access stackPane
+     * @return pane
+     */
     public StackPane getStackPane() {
         return pane;
     }
 
-    public Tile[][] getTiles() {
-        return tiles;
-    }
-
+    /**
+     * Method to update tile board after each turn with X and O symbols
+     * @param row           row of new mark on the board
+     * @param col           column of new mark on the board
+     * @param mark          mark to be placed on the board
+     */
     public void updateTileBoard(int row, int col, String mark) {
         tiles[row][col].setTileValue(mark);
     }
 
-    // inner-class for each tile on the tile board
+    /**
+     *  Inner-class for each tile on the tile board to update on both player window after each turn
+     */
     public class Tile {
         // pane layout for each tile
         private StackPane tilePane;
@@ -94,7 +115,7 @@ public class TileBoard {
             border.setStroke(Color.BLACK);
 
             // give the tile a background
-            border.setFill(Color.TRANSPARENT);
+            border.setFill(Color.WHITESMOKE);
 
             // initialize label
             tileLabel = new Label("");
@@ -121,10 +142,6 @@ public class TileBoard {
 
                     // send to the server
                     thisPlayer.sendMyMove(position, row, col,thisPlayer.checkForWin(), thisPlayer.checkTie());
-
-                    // check for win or tie
-
-//                    thisPlayer.checkTie();
                 }
 
 
@@ -133,7 +150,6 @@ public class TileBoard {
                 Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {
-//                        thisPlayer.checkForEnemyWin();
                         thisPlayer.updatePlayerTurn();
                     }
                 });
@@ -141,20 +157,34 @@ public class TileBoard {
             });
         }
 
-        // getters
+        /**
+         * Getter method for tile pane
+         * @return tilePane         get specific tile pane
+         */
         public StackPane getTilePane() {
             return tilePane;
         }
 
+        /**
+         * Getter method to access position of move on tile
+         * @return position         Position of mark
+         */
         public int getPosition() {
             return position;
         }
 
+        /**
+         * Getter method of tile value
+         * @return tileLabel.getText()
+         */
         public String getTileValue() {
             return tileLabel.getText();
         }
 
-        // setters
+        /** setter method to set tile value
+         * 
+         * @param value         
+         */
         public void setTileValue(String value) {
             tileLabel.setText(value);
         }
