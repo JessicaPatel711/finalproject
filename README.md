@@ -31,8 +31,11 @@
 <h2 id="project-files-description"> Project Files Description</h2>
 
 <ul>
-  <li><b>helloapplication.py</b> -  </li>
-  <li><b>helloapplication2.py</b> -   </li>
+  <li><b>GameServer.java</b> -  </li>
+  <li><b>Player.java</b> -   </li>
+  <li><b>InfoCenter.java</b> -   </li>
+  <li><b>TileBoard.java</b> -   </li>
+  <li><b>UIConstants.java</b> -   </li>
 </ul>
 
 <h3>Some other supporting files</h3>
