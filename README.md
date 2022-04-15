@@ -44,7 +44,10 @@
 <h2 id="getting-started"> Getting Started</h2>
 
 <p>You are able to start the game by typing the following commands in the command line:</p>
-<pre><code>$ python tictactoe.py</code></pre>
+<pre><code>$ java GameServer.java</code></pre>
+<pre><code>$ java Player.java</code></pre>
+<pre><code>$ java Player.java</code></pre>
+
 
 <i> blank space for more info </code>, for easy copying and pasting.</i>
 
