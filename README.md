@@ -59,7 +59,7 @@
 <p> When the main player (player who gets first turn) wins, the three Xs will be covered by a straight black line with a "Winner" message display on the main player's window, while the opponent's window will have the "You lose" message displayed.</p>
 
 <p align="center"> 
-<img src="README_files/PlayerX_Won.jpg" alt="Player X Won" height="282px" width="637px">
+<img src="README_files/PlayerX_Won.jpg" alt="Player X Won" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
@@ -70,7 +70,7 @@
 
 <p align="center"> 
 <p>ENTER IMAGE EXAMPLE BELOW.</p>
-<img src="README_files/PlayerO_Won.jpg" alt="Animated gif DFS Algorithm" height="282px" width="637px">
+<img src="README_files/PlayerO_Won.jpg" alt="Player O Won" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
@@ -81,7 +81,7 @@
 
 <p align="center"> 
 <p>ENTER IMAGE EXAMPLE BELOW.</p>
-<img src="README_files/Tie.jpg" alt="Animated gif DFS Algorithm" height="282px" width="637px">
+<img src="README_files/Tie.jpg" alt="Tie" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
