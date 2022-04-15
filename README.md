@@ -1,6 +1,6 @@
-<h1 align="center"> TIC TAC TOE </h1>
-<h3 align="center"> CSCI 2020U - Software Systems and Integrations </h3>
-<h5 align="center"> Project Assignment 1 (Winter 2020) </h5>
+<h1 align="center"> ❌⭕ TIC TAC TOE ❌⭕ </h1>
+<h3 align="center"> CSCI 2020U - Software Systems and Integrations 👩🏽‍💻 </h3>
+<h5 align="center"> Final Group Project (Winter 2022) </h5>
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
