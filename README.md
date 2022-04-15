@@ -76,7 +76,7 @@
 <!-- SCENARIO3 -->
 <h2 id="scenario3"> Scenario 3: Both Player Forms a Tie</h2>
 
-<p> If there comes a chance that no one has formed a straight line by the end of the game, the game will end with the "It is a tie" massage displaying on both player's window.</p>
+<p> If there comes a chance that no one has formed a straight line by the end of the game, the game will end with the "Tie!" massage displaying on both player's window.</p>
 
 <p align="center"> 
 <img src="README_files/Tie.jpg" alt="Tie" height="300px" width="300px">
