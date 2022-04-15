@@ -1,3 +1,12 @@
+/**
+ * @author Japnit Ahuja
+ * @author Aanisha Newaz
+ * @author Chioma Okechukwu
+ * @author Jessica Patel
+ *
+ * @version 1.0
+ */
+
 package csci2020u.finalproject.tictactoe;
 
 import java.io.DataInputStream;
@@ -6,15 +15,15 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * host the server-side functionality of the multiplayer tictactoe game
- */
+    /**
+     * Constructor to make new serverSocket at the specified port
+     */
 public class GameServer {
-    private ServerSocket serverSocket = null;
-    private int numPlayers;
+    private ServerSocket serverSocket = null; //server to connect clients to the game
+    private int numPlayers; //number of players (used to track max players, which is two)
 
-    private ClientHandler player1;
-    private ClientHandler player2;
+    private ClientHandler player1; //player 1 client
+    private ClientHandler player2; //player 2 client
 
     // constructor to make new serverSocket at the specified port
     public GameServer() {
@@ -30,7 +39,12 @@ public class GameServer {
         }
     }
 
-    // method to encapsulate the instructions for the server waiting for connections
+    /**
+     *  Method to encapsulate the instructions for the server waiting for connections.
+     *
+     *  This method updates the user in the terminal when the first and second player joins.
+     *      After the second player joins, the game starts when one clicks the button
+     */
     public void acceptConnections() {
         try {
             System.out.println("Waiting for connections...");
@@ -64,8 +78,12 @@ public class GameServer {
         }
     }
 
-    // use threads to concurrently let two players play
-    // use ClientHandler class to add instructions to run on each thread
+    /**
+     *  This class uses threads to concurrently let two players play.
+     *
+     *  The class is used to add instructions to run on each thread.
+     *
+     */
     private class ClientHandler implements Runnable {
         // the client socket
         private Socket clientSocket = null;
@@ -89,6 +107,12 @@ public class GameServer {
             }
         }
 
+         /**
+         * Method to run the game by letting players take turns
+         *
+         * This method keeps track on players' moves, who won or if the game is a tie.
+         */
+
         @Override
         public void run() {
             // send to the player: whether they are circle or not
@@ -104,20 +128,22 @@ public class GameServer {
                     boolean tie = dis.readBoolean();
                     System.out.println(winner);
 
+                    //if it is the first player's turn(X)
                     if (!playerIsCircle) {
-                        if(winner){
+                        if(winner){ //if they win
                             System.out.println("Player 1 won");
                         }
-                        else if (tie){
+                        else if (tie){ //if the game is a tie
                             System.out.println("Tie");
                         }
                         else{
                             System.out.println("Player #1 placed a mark on tile " + move);
                         }
+                        //send the player's move and update into the method
                         player2.sendPlayerMove(move, row, col,winner,tie);
 
 
-                    } else {
+                    } else {//if it is the second player's turn
                         if(winner){
                             System.out.println("Player 2 won");
                         }
@@ -125,9 +151,10 @@ public class GameServer {
                             System.out.println("Tie");
                         }
                         else{
+                            //if the game doesn't end, update their move
                             System.out.println("Player #2 placed a mark on tile " + move);
-
                         }
+                        //send player 2's move and updates to the method for player 1
                         player1.sendPlayerMove(move, row, col,winner,tie);
 
                     }
@@ -138,7 +165,14 @@ public class GameServer {
             }
         }
 
-        // send any player's move to the players
+        /**
+         * Method to send any player's move to the players
+         * @param pos           Player's tile position
+         * @param row           Row placement of tile placement on board
+         * @param col           Column placement of the tile on the board
+         * @param won           Update if current player won
+         * @param tie           Update if game is a tie
+         */
         public void sendPlayerMove(int pos, int row, int col, boolean won, boolean tie) {
             try {
                 dos.writeInt(pos);
@@ -151,7 +185,11 @@ public class GameServer {
             }
         }
     }
-
+    
+    /**
+     *  Main method to run the server to start the game
+     * @param args
+     */
     public static void main(String[] args) {
         GameServer gg = new GameServer();
         gg.acceptConnections();

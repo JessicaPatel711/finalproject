@@ -1,3 +1,12 @@
+/**
+ * @author Japnit Ahuja
+ * @author Aanisha Newaz
+ * @author Chioma Okechukwu
+ * @author Jessica Patel
+ *
+ * @version 1.0
+ */
+
 package csci2020u.finalproject.tictactoe;
 
 import javafx.geometry.Pos;
@@ -9,7 +18,6 @@ import javafx.scene.text.Font;
 
 import java.util.Arrays;
 
-
 public class TileBoard {
     // use StackPane for the tile board
     private StackPane pane;
@@ -20,6 +28,11 @@ public class TileBoard {
     // the player this tile board belongs to
     private Player thisPlayer;
 
+    /**
+     * Class constructor for TileBoard class to add tiles onto game board
+     *
+     * @param player            Current player for new Client Window
+     */
     public TileBoard(Player player) {
         thisPlayer = player;
 
@@ -32,7 +45,9 @@ public class TileBoard {
         addAllTiles(); // initialize an empty tile board
     }
 
-    // add empty tiles to the tile board
+    /**
+     * Method to add empty tiles to the tile board
+     */
     private void addAllTiles() {
         int pos = 0; // update the position of each tile
         for (int row = 0; row < 3; row++) {
@@ -53,16 +68,27 @@ public class TileBoard {
         }
     }
 
-    // getters
+    /**
+     * Getter method to access stackPane
+     * @return pane
+     */
     public StackPane getStackPane() {
         return pane;
     }
 
+    /**
+     * Method to update tile board after each turn with X and O symbols
+     * @param row           row of new mark on the board
+     * @param col           column of new mark on the board
+     * @param mark          mark to be placed on the board
+     */
     public void updateTileBoard(int row, int col, String mark) {
         tiles[row][col].setTileValue(mark);
     }
 
-    // inner-class for each tile on the tile board
+    /**
+     *  Inner-class for each tile on the tile board to update on both player window after each turn
+     */
     public class Tile {
         // pane layout for each tile
         private StackPane tilePane;
@@ -131,20 +157,34 @@ public class TileBoard {
             });
         }
 
-        // getters
+        /**
+         * Getter method for tile pane
+         * @return tilePane         get specific tile pane
+         */
         public StackPane getTilePane() {
             return tilePane;
         }
 
+        /**
+         * Getter method to access position of move on tile
+         * @return position         Position of mark
+         */
         public int getPosition() {
             return position;
         }
 
+        /**
+         * Getter method of tile value
+         * @return tileLabel.getText()
+         */
         public String getTileValue() {
             return tileLabel.getText();
         }
 
-        // setters
+        /** setter method to set tile value
+         * 
+         * @param value         
+         */
         public void setTileValue(String value) {
             tileLabel.setText(value);
         }

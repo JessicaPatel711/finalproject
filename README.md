@@ -31,16 +31,17 @@
 <h2 id="project-files-description"> Project Files Description</h2>
 
 <ul>
-  <li><b>GameServer.java</b> -  </li>
-  <li><b>Player.java</b> -   </li>
-  <li><b>InfoCenter.java</b> -   </li>
-  <li><b>TileBoard.java</b> -   </li>
-  <li><b>UIConstants.java</b> -   </li>
+  <li><b>GameServer.java</b> - Used to set up the servers and run the main game. </li>
+  <li><b>Player.java</b> - Sets up clients with game updates and player information.  </li>
+  <li><b>InfoCenter.java</b> - Information center for running game that lets players know about the winner or whether the game is a tie.  </li>
+  <li><b>TileBoard.java</b> - Sets up the tic-tac-toe board and displayes each tile to play with and place marks by both players. </li>
+  <li><b>UIConstants.java</b> - Stores constants to access when setting up application size.  </li>
 </ul>
 
 <h3>Some other supporting files</h3>
 <ul>
-  <li><b>we will enter pics and all.py</b> - Project specific autograding test classes.</li>
+  <li><b>bg.jpg</b> - Background image. </li>
+  <li><b>bg2.jpg</b> - Background image. </li>
 </ul>
 
 <!-- GETTING STARTED -->
@@ -56,33 +57,30 @@
 <!-- SCENARIO1 -->
 <h2 id="scenario1"> Scenario 1: Main Player Wins </h2>
 
-<p> When the main player (player who gets first turn) wins, the three Xs will be covered by a straight black line with a "Winner" message display on the main player's window, while the opponent's window will have the "You lose" message displayed.</p>
+<p> When the main player (player who gets first turn) wins, the three Xs will be recorded with a "Winner" message display on the main player's window, accouncing the winner on both clients' server.</p>
 
 <p align="center"> 
-<p>ENTER IMAGE EXAMPLE BELOW.</p>
-<img src="PlayerX_Won.jpg" alt="Player X Won" height="282px" width="637px">
+<img src="README_files/PlayerX_Won.jpg" alt="Player X Won" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
 <!-- SCENARIO2 -->
 <h2 id="scenario2"> Scenario 2: Opponent Wins </h2>
 
-<p> When the opponent (player who gets second turn) wins, the three Os will be covered by a straight black line with a "Winner" message display on the opponent's window, while the main player's window will have the "You lose" message displayed.</p>
+<p> When the opponent (player who gets second turn) wins, the three Os will be shown with a "Winner" message display on the opponent's window, accouncing the winner on both clients' server.</p>
 
 <p align="center"> 
-<p>ENTER IMAGE EXAMPLE BELOW.</p>
-<img src="gif/DFS.gif" alt="Animated gif DFS Algorithm" height="282px" width="637px">
+<img src="README_files/PlayerO_Won.jpg" alt="Player O Won" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
 <!-- SCENARIO3 -->
 <h2 id="scenario3"> Scenario 3: Both Player Forms a Tie</h2>
 
-<p> If there comes a chance that no one has formed a straight line by the end of the game, the game will end with the "It is a tie" massage displaying on both player's window.</p>
+<p> If there comes a chance that no one has formed a straight line by the end of the game, the game will end with the "Tie!" massage displaying on both player's window.</p>
 
 <p align="center"> 
-<p>ENTER IMAGE EXAMPLE BELOW.</p>
-<img src="gif/DFS.gif" alt="Animated gif DFS Algorithm" height="282px" width="637px">
+<img src="README_files/Tie.jpg" alt="Tie" height="300px" width="300px">
 <!--height="382px" width="737px"-->
 </p>
 
@@ -98,3 +96,7 @@ This project was submitted as the final course project for CSCI 2020U “Softwar
 <h2 id="credits"> Credits</h2>
 
 Japnit  Jessica   Chioma   Aanisha
+<p> Japnit Ahuja (100790042)</p>
+<p> Aanisha Newaz (100788588)</p>
+<p> Chioma Okechukwu ()</p>
+<p> Jessica Patel ()</p>
