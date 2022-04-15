@@ -31,11 +31,11 @@
 <h2 id="project-files-description"> Project Files Description</h2>
 
 <ul>
-  <li><b>GameServer.java</b> -  </li>
-  <li><b>Player.java</b> -   </li>
-  <li><b>InfoCenter.java</b> -   </li>
-  <li><b>TileBoard.java</b> -   </li>
-  <li><b>UIConstants.java</b> -   </li>
+  <li><b>GameServer.java</b> - Used to set up the servers and run the main game. </li>
+  <li><b>Player.java</b> - Sets up clients with game updates and player information.  </li>
+  <li><b>InfoCenter.java</b> - Information center for running game that lets players know about the winner or whether the game is a tie.  </li>
+  <li><b>TileBoard.java</b> - Sets up the tic-tac-toe board and displayes each tile to play with and place marks by both players. </li>
+  <li><b>UIConstants.java</b> - Stores constants to access when setting up application size.  </li>
 </ul>
 
 <h3>Some other supporting files</h3>
