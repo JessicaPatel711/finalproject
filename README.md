@@ -51,8 +51,8 @@
 <pre><code>$ java Player.java</code></pre>
 <pre><code>$ java Player.java</code></pre>
 
-
-<i> blank space for more info </code>, for easy copying and pasting.</i>
+<p> You can view our video demo on how to run the file and a test run of the game: https://www.loom.com/share/3f8da600c3c54b7fad111489ca4f2804</p>
+<i> </code>, for easy copying and pasting.</i>
 
 <!-- SCENARIO1 -->
 <h2 id="scenario1"> Scenario 1: Main Player Wins </h2>
