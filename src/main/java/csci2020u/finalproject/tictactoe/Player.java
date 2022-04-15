@@ -1,5 +1,13 @@
-package csci2020u.finalproject.tictactoe;
+/**
+ * @author Japnit Ahuja
+ * @author Aanisha Newaz
+ * @author Chioma Okechukwu
+ * @author Jessica Patel
+ *
+ * @version 1.0
+ */
 
+package csci2020u.finalproject.tictactoe;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -22,7 +30,7 @@ public class Player extends Application {
     private ClientSideConnection csc;
 
     // GAMEPLAY ELEMENTS
-    private boolean playerIsCircle;
+    private boolean playerIsCircle; // indicates if it is player 1 (X) or player 2 (O)'s turn
     public String myMark; // will be either "X" or "O"
     public boolean myTurn;
     public boolean gameRunning = true;
@@ -35,6 +43,11 @@ public class Player extends Application {
     private TileBoard tileBoard;
     private InfoCenter infoCenter;
 
+    /**
+     * Stage method to get clients to connect to the server and display GUI for user to play the game
+     *
+     * @param stage         Start up new window from scene with UI elements
+     */
     @Override
     public void start(Stage stage) {
         // connect to server at the start of the program
@@ -46,7 +59,7 @@ public class Player extends Application {
         BorderPane mainRoot = new BorderPane();
         // mainRoot.setBackground(new Background(new BackgroundFill(Color.CHOCOLATE, new CornerRadii(0), Insets.EMPTY)));
         mainRoot.setStyle("-fx-background-image: url('https://t3.ftcdn.net/jpg/02/58/99/42/360_F_258994216_zu9hTrycqkUa3GMpB58HtcXaiEQfKMs9.jpg'); " +
-                          "-fx-background-repeat: no-repeat; -fx-background-size: 600 600; -fx-background-position: center center;");
+                "-fx-background-repeat: no-repeat; -fx-background-size: 600 600; -fx-background-position: center center;");
 
         // start game button
         Button startBtn = new Button("Start New Game!!");
@@ -56,11 +69,12 @@ public class Player extends Application {
 
         // info for the player
         String playerInfoText = "";
-        if (!playerIsCircle) {
+        if (!playerIsCircle) { //if it is not circle, it will be player 1 (X)
             playerInfoText = " You are Player #1: Play as \"X\" ";
         } else {
             playerInfoText = " You are Player #2: Play as \"O\" ";
         }
+        //set label to display player info
         Label playerInfo = new Label(playerInfoText);
         playerInfo.setFont(Font.font(20));
         playerInfo.setStyle("-fx-font-size:20; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: radial-gradient(center 50% 50%, radius 100%, #de62ba, #f568ff, #613b87)");
@@ -89,6 +103,7 @@ public class Player extends Application {
             windowTitle = "Player #2: Play as \"O\"";
         }
 
+        //get stage ready for display
         stage.setTitle("Hello! " + windowTitle);
         stage.setScene(main);
         stage.show();
@@ -116,7 +131,10 @@ public class Player extends Application {
         root.getChildren().add(infoCenter.getStackPane());
     }
 
-    // create a new tile board and add to the root layout
+    /**
+     * create a new tile board and add to the root layout
+     * @param root
+     */
     private void initTileBoard(BorderPane root) {
         tileBoard = new TileBoard(this);
 
@@ -130,20 +148,25 @@ public class Player extends Application {
      * if the positions where the enemy is placed is valid for win, the winner variable becomes "true"
      */
     public boolean checkForWin() {
+        //check all spaces to see if there are 3 Xs or Os in a row to determine a win
         for (int i = 0; i < this.winLocations.length; ++i) {
             if (!this.playerIsCircle) {
-                if (this.markedSpaces[this.winLocations[i][0]] == "X" && this.markedSpaces[this.winLocations[i][1]] == "X" && this.markedSpaces[this.winLocations[i][2]] == "X") {
+                if (this.markedSpaces[this.winLocations[i][0]] == "X" &&
+                        this.markedSpaces[this.winLocations[i][1]] == "X" &&
+                        this.markedSpaces[this.winLocations[i][2]] == "X") {
                     infoCenter.setInfoCenterMessage("Player X Won.");
                     gameRunning = false;
                     return true;
                 }
-            } else if (this.markedSpaces[this.winLocations[i][0]] == "O" && this.markedSpaces[this.winLocations[i][1]] == "O" && this.markedSpaces[this.winLocations[i][2]] == "O") {
+            } else if (this.markedSpaces[this.winLocations[i][0]] == "O" &&
+                    this.markedSpaces[this.winLocations[i][1]] == "O" &&
+                    this.markedSpaces[this.winLocations[i][2]] == "O") {
                 infoCenter.setInfoCenterMessage("Player O Won.");
                 gameRunning = false;
                 return true;
             }
         }
-        return false;
+        return false; //if no one wins, return 'false' message
     }
 
 
@@ -151,6 +174,7 @@ public class Player extends Application {
      * Method to check for a tie
      */
     public boolean checkTie() {
+        //check if all tiles are marked
         for (int i = 0; i < this.markedSpaces.length; ++i) {
             if (this.markedSpaces[i] == null) {
 
@@ -159,7 +183,7 @@ public class Player extends Application {
         }
         infoCenter.setInfoCenterMessage("Tie!");
         gameRunning = false;
-        return true;
+        return true; //if the game is not running, let game be a tie
 
     }
 
@@ -175,8 +199,14 @@ public class Player extends Application {
 
 
     // NETWORKING LOGIC
+
     /**
-     * send the move this player made to the server
+     * Method to send the move this player made to the server
+     * @param position          position update of previous player
+     * @param row               row of the board which is marked
+     * @param col               column of the board which is marked
+     * @param won               update if the previous player won
+     * @param tie               update if the game ended and is a tie
      */
     public void sendMyMove(int position, int row, int col, boolean won, boolean tie) {
         try {
@@ -193,12 +223,13 @@ public class Player extends Application {
     }
 
     /**
-     * receive the move the opponent made from the server
+     * method to receive the move the opponent made from the server
      */
     public void receiveEnemyMove() {
         System.out.println("Receiving enemy move...");
 
         try {
+            //information to send to the other player
             int pos = csc.dis.readInt();
             int row = csc.dis.readInt();
             int col = csc.dis.readInt();
@@ -208,9 +239,15 @@ public class Player extends Application {
             if (!playerIsCircle) {
                 // run this in a new thread so the UI loads
                 Platform.runLater(new Runnable() {
+                    
+                    /**
+                     * Method to run the game by letting players take turns and recieve game updates
+                     *
+                     * Used to send updates on winners or ties.
+                     */
                     @Override
                     public void run() {
-                        if(won) {
+                        if(won) { 
                             System.out.println("Player O won.");
                             infoCenter.setInfoCenterMessage("Player O won.");
                             gameRunning = false;
@@ -275,11 +312,12 @@ public class Player extends Application {
      * helper method to set the mark of this player: either "X" or "O"
      */
     private void startGame() {
-
+        //place X if player is not O
         if (!playerIsCircle) {
             myMark = "X";
             myTurn = true;
         } else {
+            //place O if player is O
             myMark = "O";
             myTurn = false;
 
@@ -326,6 +364,10 @@ public class Player extends Application {
         }
     }
 
+    /**
+     * main method to launch game
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
