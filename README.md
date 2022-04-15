@@ -37,12 +37,6 @@
   <li><b>UIConstants.java</b> - Stores constants to access when setting up application UI.  </li>
 </ul>
 
-<h3>Some other supporting files</h3>
-<ul>
-  <li><b>bg.jpg</b> - Background image. </li>
-  <li><b>bg2.jpg</b> - Background image. </li>
-</ul>
-
 <!-- GETTING STARTED -->
 <h2 id="getting-started"> 🕹️ Getting Started</h2>
 <p>First, please clone the repo above. </p>
