@@ -91,7 +91,7 @@ This project was submitted as the final group project for CSCI 2020U “Software
 <!-- CREDITS -->
 <h2 id="credits"> 🤩 Credits</h2>
 
-<p> Japnit Ahuja  - 100790042 </p>
 <p> Aanisha Newaz - 100788588 </p>
-<p> Japnit Ahuja - 100790042</p>
+<p> Chioma Okechukwu - 100741742 </p>
+<p> Japnit Ahuja  - 100790042 </p>
 <p> Jessica Patel - 100785837 </p>
