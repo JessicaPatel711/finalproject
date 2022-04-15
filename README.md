@@ -40,7 +40,8 @@
 
 <h3>Some other supporting files</h3>
 <ul>
-  <li><b>we will enter pics and all.py</b> - Project specific autograding test classes.</li>
+  <li><b>bg.jpg</b> - Background image. </li>
+  <li><b>bg2.jpg</b> - Background image. </li>
 </ul>
 
 <!-- GETTING STARTED -->
