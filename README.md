@@ -96,3 +96,7 @@ This project was submitted as the final course project for CSCI 2020U “Softwar
 <h2 id="credits"> Credits</h2>
 
 Japnit  Jessica   Chioma   Aanisha
+<p> Japnit Ahuja (100790042)</p>
+<p> Aanisha Newaz (100788588)</p>
+<p> Chioma Okechukwu ()</p>
+<p> Jessica Patel ()</p>
