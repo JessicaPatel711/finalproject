@@ -46,12 +46,12 @@
 <!-- GETTING STARTED -->
 <h2 id="getting-started"> Getting Started</h2>
 
-<p>You are able to start the game by typing the following commands in the command line:</p>
+<p>You are able to start the game by <b> first navigating to the package folder </b> and typing the following commands in the command line:</p>
 <pre><code>$ java GameServer.java</code></pre>
 <pre><code>$ java Player.java</code></pre>
 <pre><code>$ java Player.java</code></pre>
 
-<p> You can view our video demo on how to run the file and a test run of the game: https://www.loom.com/share/3f8da600c3c54b7fad111489ca4f2804</p>
+<p> 📽️ You can view our video demo on how to run the file and a test run of the game: https://www.loom.com/share/3f8da600c3c54b7fad111489ca4f2804</p>
 
 <!-- SCENARIO1 -->
 <h2 id="scenario1"> Scenario 1: Main Player Wins </h2>
